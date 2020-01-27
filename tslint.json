@@ -1,0 +1,16 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-react"
+    ],
+    "jsRules": {},
+    "rules": {
+        "no-any": true,
+        "indent": [true, "spaces", 4],
+        "jsx-no-lambda": false,
+        "jsx-no-bind": false,
+        "interface-name": false
+    },
+    "rulesDirectory": []
+}

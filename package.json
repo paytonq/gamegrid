@@ -1,0 +1,29 @@
+{
+  "name": "gamegrid",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "description": "A gamegrid for an IO-style browser game.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": {
+    "name": "Payton Quinn",
+    "url": "https://github.com/payton-quinn"
+  },
+  "repository": "https://github.com/payton-quinn/gamegrid",
+  "bugs": "https://github.com/payton-quinn/gamegrid/issues",
+  "devDependencies": {
+    "typescript": "^3.7.4",
+    "tslint": "^5.20.1",
+    "tslint-react": "^4.1.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": ["lib/**/*"]
+}
