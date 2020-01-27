@@ -1,6 +1,6 @@
 {
-  "name": "gamegrid",
-  "version": "0.0.1",
+  "name": "@io-game-framework/gamegrid",
+  "version": "0.0.2",
   "license": "Apache-2.0",
   "description": "A gamegrid for an IO-style browser game.",
   "main": "lib/index.js",
@@ -25,5 +25,7 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "files": ["lib/**/*"]
+  "files": [
+    "lib/**/*"
+  ]
 }
