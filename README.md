@@ -6,7 +6,7 @@ A gamegrid for an IO-style browser game.
 
 ## Usage
 ```typescript
-import { GameGrid, GameGridConfig } from "gamegrid";
+import { GameGrid, GameGridConfig } from "@io-game-framework/gamegrid";
 
 ...
 
