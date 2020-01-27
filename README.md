@@ -21,5 +21,5 @@ if (this.canvas.current) {
 
     const grid = new GameGrid(gameGridConfig);
     grid.draw();
-  }
+}
 ```
