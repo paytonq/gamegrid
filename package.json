@@ -1,6 +1,6 @@
 {
   "name": "@io-game-framework/gamegrid",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "Apache-2.0",
   "description": "A gamegrid for an IO-style browser game.",
   "main": "lib/index.js",
