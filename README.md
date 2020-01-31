@@ -1,8 +1,7 @@
 # gamegrid
 A gamegrid for an IO-style browser game.
 
-![image](https://user-images.githubusercontent.com/59527089/73162388-86e11900-40a2-11ea-9a4f-cd3993710bef.png)
-
+![output](https://user-images.githubusercontent.com/59527089/73527621-33373e00-43c8-11ea-9918-7f307d237f26.gif)
 
 ## Usage
 ```typescript
