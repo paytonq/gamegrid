@@ -1,8 +1,18 @@
 {
   "name": "@io-game-framework/gamegrid",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "Apache-2.0",
   "description": "A gamegrid for an IO-style browser game.",
+  "keywords": [
+      "game",
+      "grid",
+      "gamegrid",
+      "game framework",
+      "board",
+      "game board",
+      "game grid",
+      "gameboard"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": {
