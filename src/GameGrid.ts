@@ -16,7 +16,6 @@
 import { GameGridConfig } from "./GameGridConfig";
 
 export class GameGrid {
-    private canvasOrigin: [number, number] = [0.5, 0.5];
     private mouseOffset?: [number, number];
     private config: GameGridConfig;
 
@@ -50,7 +49,7 @@ export class GameGrid {
             const boardContext = canvasElement.getContext("2d");
 
             if (boardContext) {
-                boardContext.translate(this.canvasOrigin[0], this.canvasOrigin[1]);
+                boardContext.translate(0.5, 0.5);
                 boardContext.fillStyle = "rgba(0, 0, 0, 0)";
 
                 window.requestAnimationFrame(this.updateBoard.bind(this, boardContext));
@@ -61,19 +60,17 @@ export class GameGrid {
     private updateBoard(boardContext: CanvasRenderingContext2D) {
         window.requestAnimationFrame(this.updateBoard.bind(this, boardContext));
 
-        boardContext.clearRect(
-            -this.canvasOrigin[0],
-            -this.canvasOrigin[1],
-            boardContext.canvas.width,
-            boardContext.canvas.height,
-        );
+        boardContext.save();
+        boardContext.setTransform(1, 0, 0, 1, 0, 0);
+        boardContext.clearRect(0, 0, boardContext.canvas.width, boardContext.canvas.height);
+        boardContext.restore();
 
-        this.updateOriginLocation(boardContext);
+        this.updateTranslation(boardContext);
 
         this.drawGrid(boardContext);
     }
 
-    private updateOriginLocation(boardContext: CanvasRenderingContext2D) {
+    private updateTranslation(boardContext: CanvasRenderingContext2D) {
         if (this.mouseOffset) {
             const xPercentile = this.mouseOffset[0] / boardContext.canvas.width;
             const yPercentile = this.mouseOffset[1] / boardContext.canvas.height;
@@ -88,12 +85,11 @@ export class GameGrid {
                 return;
             }
 
-            const deltaX = movementSpeedMultiplier * (0.5 - xPercentile);
-            const deltaY = movementSpeedMultiplier * (0.5 - yPercentile);
+            const fiftyPercentile = 0.5;
+            const deltaX = movementSpeedMultiplier * (fiftyPercentile - xPercentile);
+            const deltaY = movementSpeedMultiplier * (fiftyPercentile - yPercentile);
 
             boardContext.translate(deltaX, deltaY);
-            this.canvasOrigin[0] += deltaX;
-            this.canvasOrigin[1] += deltaY;
         }
     }
 
